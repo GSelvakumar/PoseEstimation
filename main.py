@@ -25,6 +25,7 @@ while True:
         for id, lm in enumerate(results.pose_landmarks.landmark):
             height, width, channel = img.shape
             print(id, lm)
+            # normalized value (0 to 1) is converted to pixels
             cx, cy = int(lm.x * width), int(lm.y * height)
             cv2.circle(img, (cx, cy), 3, (255, 0, 0), cv2.FILLED)
 
